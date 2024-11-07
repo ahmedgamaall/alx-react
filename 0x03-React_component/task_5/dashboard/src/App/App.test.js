@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import React from "react";
 import App from "./App";
 import Login from "../Login/Login";
@@ -62,7 +59,7 @@ describe("When ctrl + h is pressed", () => {
     wrapper.unmount();
   });
 
-  document.alert = jest.fn();
+  // document.alert = jest.fn();
   it("checks that alert function is called", () => {
     const wrapper = mount(<App />);
     const spy = jest.spyOn(window, "alert");
@@ -84,5 +81,5 @@ describe("When ctrl + h is pressed", () => {
     jest.restoreAllMocks();
     wrapper.unmount();
   });
-  document.alert.mockClear();
+  // document.alert.mockClear();
 });
